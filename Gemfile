@@ -50,6 +50,14 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  # Adds support for Capybara system testing and selenium driver
+  gem 'factory_bot_rails', '5.1.1'
+  gem 'faker', '2.11.0'
+  gem 'json_matchers', '0.11.1'
+  gem 'shoulda-matchers', '4.3.0'
+  # Easy installation and use of web drivers to run system tests with browsers
+  gem 'rspec-rails', '3.9.1'
+  gem 'rspec-collection_matchers', '1.2.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
