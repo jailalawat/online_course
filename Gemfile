@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -30,15 +32,15 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'bullet', '6.1.0'
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'rubocop'
 end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.2'
+  gem 'web-console', '>= 3.3.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
@@ -56,14 +58,14 @@ group :test do
   gem 'json_matchers', '0.11.1'
   gem 'shoulda-matchers', '4.3.0'
   # Easy installation and use of web drivers to run system tests with browsers
-  gem 'rspec-rails', '3.9.1'
   gem 'rspec-collection_matchers', '1.2.0'
+  gem 'rspec-rails', '3.9.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem "twitter-bootstrap-rails", '3.2.2'
 gem 'active_model_serializers', '0.10.10'
 gem 'active_storage_validations', '0.9.0'
-gem "rectify", '0.13.0'
 gem 'friendly_id', '~> 5.4.0'
+gem 'rectify', '0.13.0'
+gem 'twitter-bootstrap-rails', '3.2.2'
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
