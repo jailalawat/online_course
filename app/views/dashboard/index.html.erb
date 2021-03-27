@@ -1,0 +1,17 @@
+<div class="row" id="infinite-scrolling">
+  <div class="card-columns" id="courses">
+  </div>
+  <div class="row pagination">
+    <div class='next_page'>
+
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', () => {
+    fetch('/courses.json')
+    .then(response => response.json())
+    .then(json => updateList(json));
+  })
+</script>
