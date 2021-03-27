@@ -6,3 +6,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+CodecademyCourseJob.perform_later
+FutureLearnCourseJob.perform_later
+CanvasCourseCourseJob.perform_later

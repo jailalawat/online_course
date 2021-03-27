@@ -66,6 +66,7 @@ end
 gem 'active_model_serializers', '0.10.10'
 gem 'active_storage_validations', '0.9.0'
 gem 'friendly_id', '~> 5.4.0'
+gem 'mini_magick'
 gem 'rectify', '0.13.0'
 gem 'twitter-bootstrap-rails', '3.2.2'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
