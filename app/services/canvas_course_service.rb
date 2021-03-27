@@ -25,10 +25,13 @@ class CanvasCourseService < BaseCourseService
   end
 
   def attach_images(json_data, course)
-    _url = URI.open(json_data['image'])
-    primary_image = course.images.build(primary: true)
-    primary_image.image.attach(io: _url, filename: 'primary_image.jpg')
-    primary_image.save
+    img_url = json_data['image']
+    if img_url =~ URI::DEFAULT_PARSER.make_regexp
+      _url = URI.open(json_data['image'])
+      primary_image = course.images.build(primary: true)
+      primary_image.image.attach(io: _url, filename: 'primary_image.jpg')
+      primary_image.save
+    end
   end
 
   def create_categories(json_data, course)

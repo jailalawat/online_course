@@ -60,6 +60,7 @@ group :test do
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'rspec-collection_matchers', '1.2.0'
   gem 'rspec-rails', '3.9.1'
+  gem 'webmock'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

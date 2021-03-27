@@ -20,15 +20,21 @@ class FutureLearnCourseService < BaseCourseService
   end
 
   def attach_images(json_data, course)
-    _url = URI.open(json_data['header_image_url'])
-    primary_image = course.images.build(primary: true)
-    primary_image.image.attach(io: _url, filename: 'primary_image.jpg')
-    primary_image.save
+    img_url = json_data['header_image_url']
+    if img_url =~ URI::DEFAULT_PARSER.make_regexp
+      _url = URI.open(img_url)
+      primary_image = course.images.build(primary: true)
+      primary_image.image.attach(io: _url, filename: 'primary_image.jpg')
+      primary_image.save
+    end
 
-    _url = URI.open(json_data['image_url'])
-    image = course.images.build
-    image.image.attach(io: _url, filename: 'image.jpg')
-    image.save
+    img_url = json_data['image_url']
+    if img_url =~ URI::DEFAULT_PARSER.make_regexp
+      _url = URI.open(img_url)
+      image = course.images.build
+      image.image.attach(io: _url, filename: 'image.jpg')
+      image.save
+    end
   end
 
   def create_categories(json_data, course)

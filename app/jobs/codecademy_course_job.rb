@@ -4,6 +4,6 @@ class CodecademyCourseJob < ApplicationJob
   queue_as :default
 
   def perform
-    CanvasCourseService.new.call
+    CodecademyCourseService.new.call
   end
 end
