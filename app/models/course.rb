@@ -14,6 +14,6 @@ class Course < ApplicationRecord
   has_many :images, as: :resource
 
   def primary_image
-    images.where(primary: true)
+    images.find_by(primary: true)
   end
 end
