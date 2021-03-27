@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CanvasCourseCourseJob < ApplicationJob
   queue_as :default
 

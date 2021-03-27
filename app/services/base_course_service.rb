@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class BaseCourseService
   def initialize(url)
     api_url = url
