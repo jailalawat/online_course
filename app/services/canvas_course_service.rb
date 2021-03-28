@@ -16,6 +16,7 @@ class CanvasCourseService < BaseCourseService
                      ce.description = json_data['teaser'],
                      ce.price = json_data['priceWithCurrency']&.gsub!(/[^0-9A-Za-z]/, '')
       ce.organisation_id = create_organisation(json_data).id
+      ce.provider = 'Canvas'
     end
   end
 

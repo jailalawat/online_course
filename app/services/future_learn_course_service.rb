@@ -11,6 +11,7 @@ class FutureLearnCourseService < BaseCourseService
                      ce.description = json_data['description'],
                      ce.short_description = json_data['introduction'],
                      ce.organisation_id = create_organisation(json_data).id
+                     ce.provider = 'FutureLearn'
     end
   end
 
