@@ -1,6 +1,6 @@
 class CoursesController < ApplicationController
   def index
-    courses = Course.page(params[:page]).per(10)
+    courses = CourseFilter.new(params).call
     render json: {
       courses: BulkSerializer.new(
                   object: courses,

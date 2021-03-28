@@ -26,6 +26,7 @@ class CodecademyCourseService
                      ce.description = json_data['description'],
                      ce.short_description = json_data['short_description'],
                      ce.organisation_id = create_organisation(json_data).id
+                     ce.provider = 'Codecademy'
     end
   end
 

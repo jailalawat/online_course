@@ -1,3 +1,19 @@
+<div class="row">
+  <span class='payment-errors'></span>
+  <div class="form-group col-md-4">
+    <label class="control-label">Category Name</label>
+    <%=select_tag :category, options_for_select([]), class: "form-control"%>
+  </div>
+  <div class="form-group col-md-4">
+    <label class="control-label">Provider Name</label>
+    <%=select_tag :provider, options_for_select(['Canvas', 'Codecademy', 'FutureLearn']), class: "form-control"%>
+  </div>
+  <div class="form-group  col-md-4">
+    <br>
+    <%=submit_tag :search, class: "btn btn-primary", id: 'search'%>
+  </div>
+</div>
+
 <div class="row" id="infinite-scrolling">
   <div class="card-columns" id="courses">
   </div>
@@ -13,5 +29,9 @@
     fetch('/courses.json')
     .then(response => response.json())
     .then(json => updateList(json));
+
+    fetch('/categories.json')
+    .then(response => response.json())
+    .then(json => updateCategory(json['categories']));
   })
 </script>

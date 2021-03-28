@@ -1,7 +1,5 @@
 class Course {
   constructor(title, slug, price, description, short_description, free, primary_image_url, organisation, categories, images) {
-    console.log(organisation);
-    console.log(categories);
     this.title = title;
     this.slug = slug;
     this.price = price;
@@ -77,3 +75,30 @@ function showCourse(course){
   const courseObj = new Course(course.title, course.slug, course.price, course.description, course.short_description, course.free, course.primary_image_url, course.organisation, course.categories, course.images);
   list.innerHTML += (courseObj.showCourse());
 }
+
+function updateCategory(categories){
+  $.each(categories, function (index, value) {
+    $('#category').append($('<option/>', {
+        value: value['name'],
+        text : value['name']
+    }));
+  });
+}
+
+$(document).ready(function(){
+  $('#search').on('click', function(e){
+    e.preventDefault();
+    category = $('#category').val();
+    provider = $('#provider').val();
+    $.ajax({
+      url: '/courses?category=' + category + '&provider=' + provider,
+      method: 'GET',
+      accept: 'json'
+    }).success(function(data) {
+      if(data['courses'] == ''){
+        $('#courses').html('');
+      }
+      updateList(data)
+    });
+  })
+});

@@ -4,7 +4,7 @@ class Course < ApplicationRecord
   extend FriendlyId
   friendly_id :title, use: :slugged
 
-  validates :title, :slug, :source_id, :price, :description, presence: true
+  validates :title, :slug, :source_id, :price, :description, :provider, presence: true
   validates :price, numericality: { only_float: true }
   validates :title, presence: true, uniqueness: true
 
